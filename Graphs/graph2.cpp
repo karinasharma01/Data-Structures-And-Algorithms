@@ -1,6 +1,4 @@
-//Program to check if a path exisits between 2 given vertices in a graph.
-//If the path exists between the two vertices v1 and v2, the complete path is printed in reverse order, i.e, in printing the path from vertex v1 to v2, the vertex v2 is printed first
-//then the intermediate vertices in the path and then finally the vertex v1 is printed.
+//Program to check if a path exists between 2 given vertices in a graph.
 #include <iostream>
 #include <vector>
 usind namespace std;
