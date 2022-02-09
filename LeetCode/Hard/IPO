@@ -1,0 +1,32 @@
+class Solution {
+public:
+    static bool compare(pair<int,int>& p1,pair<int,int>& p2)
+    {
+        return p1.second < p2.second;
+    }
+    int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
+        int res = w;
+        int n = profits.size();//number of projects
+        vector<pair<int,int>> projects;
+        for(int i=0;i<n;i++){
+            projects.push_back({profits[i],capital[i]});
+        }
+        priority_queue<int> pq;
+        sort(projects.begin(),projects.end(),compare);
+        int i = 0;
+        while(k--)
+        {
+            while(i<n && projects[i].second<=w)
+            {
+                pq.push(projects[i].first);
+                i++;
+            }
+            if(!pq.empty())
+            {
+                w+=pq.top();
+                pq.pop();
+            }
+        }
+        return w;
+    }
+};
